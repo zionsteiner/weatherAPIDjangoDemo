@@ -1,14 +1,12 @@
-.likely {
-    tr:nth-child(even) {
-        background-color: #32CD32;
-    }
+.likely tr th, .likely tr td {
+        background-color: #32CD32 !important;
+        color: #ffffff !important;
 }
 
-.unlikely {
-    tr:nth-child(even) {
-        background-color: #FF0000;
-    }
+.unlikely tr th, .unlikely tr td {
+        background-color: #FF0000 !important;
+        color: #ffffff !important;
 }
 
-.default table {
+.default {
 }

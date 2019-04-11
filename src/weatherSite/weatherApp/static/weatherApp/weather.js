@@ -12,7 +12,7 @@ var formatDate = function(date) {
                   "July", "August", "September", "October", "November", "December"];
 
     var month = months[date.getMonth()];
-    var day = date.getDay();
+    var day = date.getDate();
     var year = date.getFullYear();
     return month + " " + day + ", " + year;
 }
@@ -60,7 +60,7 @@ var weatherApp = new Vue({
         methods: {
             date(index) {
                 var date = new Date(0);
-                if (index) {
+                if (index !== undefined) {
                     date.setUTCSeconds(this.forecastData[index].dt);
                  } else {
                     date.setUTCSeconds(this.currWeatherData.dt);
@@ -70,7 +70,7 @@ var weatherApp = new Vue({
 
             time(index) {
                 var date = new Date(0);
-                if (index) {
+                if (index !== undefined) {
                     date.setUTCSeconds(this.forecastData[index].dt);
                 } else {
                     date.setUTCSeconds(this.currWeatherData.dt);
@@ -80,7 +80,7 @@ var weatherApp = new Vue({
 
             temp(index) {
                 var temp;
-                if (index) {
+                if (index !== undefined) {
                     temp = this.forecastData[index].main.temp;
                 } else {
                     temp = this.currWeatherData.main.temp;
@@ -90,7 +90,7 @@ var weatherApp = new Vue({
 
             conditions(index) {
                 var conditions;
-                if (index) {
+                if (index !== undefined) {
                     conditions = this.forecastData[index].weather[0].description;
                 } else {
                     conditions = this.currWeatherData.weather[0].description;
@@ -101,7 +101,7 @@ var weatherApp = new Vue({
 
             humidity(index) {
                 var humidity;
-                if (index) {
+                if (index !== undefined) {
                     humidity = this.forecastData[index].main.humidity;
                 } else {
                     humidity = this.currWeatherData.main.humidity;
@@ -111,7 +111,7 @@ var weatherApp = new Vue({
 
             pressure(index) {
                 var pressure;
-                if (index) {
+                if (index !== undefined) {
                     pressure = this.forecastData[index].main.pressure;
                 } else {
                     pressure = this.currWeatherData.main.pressure;
@@ -170,10 +170,17 @@ var weatherApp = new Vue({
                 .then(data => data.json())
                 .then(json => {
                     this.forecastData = [];
+                    console.log(json);
                     for (let i = 0; i < json.list.length; i++) {
-                        if (i != 0 && i % 7 == 0) {
+                        if (i != 0 && (i+1) % 8 == 0) {
+                            console.log(i);
                             this.forecastData.push(json.list[i]);
                         }
+                    }
+
+                    // Handles case where full forecast isn't received
+                    if (json.list.length < 40) {
+                        this.forecastData.push(json.list[json.list.length-1]);
                     }
                     for (var forecast in this.forecastData) {
                         this.forecastData[forecast].vote = "default";
