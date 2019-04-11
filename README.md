@@ -4,3 +4,7 @@
     * formParamsString function
 * Stackoverflow
     * Reference for nextKey()
+* Bootstrap documentation
+    * Table styling
+    * Jumbotron
+* Vue.js tutorial
