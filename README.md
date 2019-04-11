@@ -8,3 +8,8 @@
     * Table styling
     * Jumbotron
 * Vue.js tutorial
+
+### Note:
+Bootstrap causes one error in the console
+
+(AKA not my code)
