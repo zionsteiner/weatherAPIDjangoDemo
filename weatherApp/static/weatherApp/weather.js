@@ -142,7 +142,7 @@ var weatherApp = new Vue({
 
             // OpenWeatherMap API request url info
             var baseOWMUrl = "https://api.openweathermap.org/data/2.5/";
-            var accessKeyOWM = "a6eb82bede2bc3920fb4b1052e7985aa";
+            var accessKeyOWM = "";
             var units = "imperial";
 
             fetch(ipStackRequestUrl)
