@@ -1,0 +1,19 @@
+.likely tr th, .likely tr td {
+        background-color: #32CD32 !important;
+        color: #ffffff !important;
+}
+
+.unlikely tr th, .unlikely tr td {
+        background-color: #FF0000 !important;
+        color: #ffffff !important;
+}
+
+.default {
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden
+}
