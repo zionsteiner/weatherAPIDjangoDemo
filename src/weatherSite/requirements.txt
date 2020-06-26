@@ -170,7 +170,7 @@ preshed==3.0.2
 prometheus-client==0.5.0
 prompt-toolkit==2.0.7
 protobuf==3.11.3
-psutil==5.4.8
+psutil==5.6.6
 psycopg2==2.8.5
 psycopg2-binary==2.8.5
 ptyprocess==0.6.0
