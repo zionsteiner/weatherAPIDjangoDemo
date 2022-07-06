@@ -116,7 +116,7 @@ lief==0.9.0
 llvmlite==0.26.0
 locket==0.2.0
 lorem==0.1.1
-lxml==4.2.5
+lxml==4.9.1
 lz4==3.0.2
 Markdown==3.2.1
 MarkupSafe==1.1.0
