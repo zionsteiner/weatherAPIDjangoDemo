@@ -225,7 +225,7 @@ sortedcontainers==2.1.0
 spacy==2.2.3
 Sphinx==1.8.2
 sphinxcontrib-websupport==1.1.0
-spotipy==2.4.4
+spotipy==2.22.1
 spyder==3.3.2
 spyder-kernels==0.3.0
 SQLAlchemy==1.2.15
